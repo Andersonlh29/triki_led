@@ -6,35 +6,51 @@
   <style>
     body {
       margin: 0;
-      background: #333;
+      background: #222;
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      align-items: center;
       height: 100vh;
-      color: #0f0;
       font-family: monospace;
+      color: #0f0;
+    }
+
+    #ledFrame {
+      position: relative;
+      width: 1000px;
+      height: 700px;
+      border: 4px solid #0f0;
+      box-shadow: 0 0 20px #0f0, 0 0 40px #0f0;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
     #pageTitle {
       position: absolute;
       top: 20px;
-      left: 40px;
-      font-size: 20px;
-      color: #0f0;
-      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 34px;
+      text-shadow: 0 0 5px #0f0, 0 0 15px #0f0;
     }
 
     #topBar {
       position: absolute;
-      top: 20px;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
       text-align: center;
-      width: 100%;
+      width: auto;
+    }
+    #timer {
+      font-size: 23px; /* 👈 Aquí ajustas el tamaño del texto del cronómetro */
+      font-weight: bold;
     }
 
     #topBar button {
       margin-left: 20px;
-      padding: 6px 12px;
-      font-size: 14px;
+      padding: 8px 16px;
+      font-size: 20px;
       color: #0f0;
       background: transparent;
       border: 2px solid #fff;
@@ -55,7 +71,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 18px;
+      font-size: 25px;
     }
 
     #leftPlayer {
@@ -69,7 +85,8 @@
     }
 
     canvas {
-      margin-top: 60px;
+      display: block;
+      margin: 160px auto 0 auto; /* Empuja canvas hacia abajo dentro del marco */
     }
   </style>
 
@@ -77,25 +94,27 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
 
-  <!-- Tu sketch.js -->
+  <!-- Tu sketch -->
   <script src="sketch.js"></script>
 </head>
 <body>
-  <div id="pageTitle">
-    ¡Bienvenido al Triki LED!
-  </div>
+  <div id="ledFrame">
+    <div id="pageTitle">
+      ¡Bienvenido al Triki LED!
+    </div>
 
-  <div id="topBar">
-    <span id="timer">Tiempo: 0:00</span>
-    <button id="newGameBtn">Nuevo Juego</button>
-  </div>
+    <div id="topBar">
+      <span id="timer">Tiempo: 0:00</span>
+      <button id="newGameBtn">Nuevo Juego</button>
+    </div>
 
-  <div id="leftPlayer">
-    Jugador 1 (X): <span id="scoreX">0</span>
-  </div>
+    <div id="leftPlayer">
+      Jugador 1 (X): <span id="scoreX">0</span>
+    </div>
 
-  <div id="rightPlayer">
-    Jugador 2 (O): <span id="scoreO">0</span>
+    <div id="rightPlayer">
+      Jugador 2 (O): <span id="scoreO">0</span>
+    </div>
   </div>
 </body>
 </html>
