@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Triki LED</title>
+  <style>
+    body {
+      margin: 0;
+      background: #333;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      color: #0f0;
+      font-family: monospace;
+    }
+
+    #pageTitle {
+      position: absolute;
+      top: 20px;
+      left: 40px;
+      font-size: 20px;
+      color: #0f0;
+      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+    }
+
+    #topBar {
+      position: absolute;
+      top: 20px;
+      text-align: center;
+      width: 100%;
+    }
+
+    #topBar button {
+      margin-left: 20px;
+      padding: 6px 12px;
+      font-size: 14px;
+      color: #0f0;
+      background: transparent;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    #topBar button:hover {
+      background: #0f0;
+      color: #000;
+      border-color: #0f0;
+      box-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+    }
+
+    #leftPlayer, #rightPlayer {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+    }
+
+    #leftPlayer {
+      left: 40px;
+      text-align: left;
+    }
+
+    #rightPlayer {
+      right: 40px;
+      text-align: right;
+    }
+
+    canvas {
+      margin-top: 60px;
+    }
+  </style>
+
+  <!-- p5.js y p5.sound -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/addons/p5.sound.min.js"></script>
+
+  <!-- Tu sketch.js -->
+  <script src="sketch.js"></script>
+</head>
+<body>
+  <div id="pageTitle">
+    ¡Bienvenido al Triki LED!
+  </div>
+
+  <div id="topBar">
+    <span id="timer">Tiempo: 0:00</span>
+    <button id="newGameBtn">Nuevo Juego</button>
+  </div>
+
+  <div id="leftPlayer">
+    Jugador 1 (X): <span id="scoreX">0</span>
+  </div>
+
+  <div id="rightPlayer">
+    Jugador 2 (O): <span id="scoreO">0</span>
+  </div>
+</body>
+</html>
+
+
+
