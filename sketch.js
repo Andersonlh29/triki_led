@@ -22,7 +22,7 @@ function preload() {
 
 function setup() {
   // El tablero tendrá 400x500, centrado dentro del marco 900x700
-  let canvas = createCanvas(400, 500);
+  let canvas = createCanvas(400, 400);
   canvas.parent('ledFrame'); // Ancla el canvas dentro del marco LED
   cellSize = height / 3;
   resetBoard();
